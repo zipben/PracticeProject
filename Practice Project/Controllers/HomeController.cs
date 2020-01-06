@@ -18,9 +18,28 @@ namespace Practice_Project.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            IndexViewModel viewModel = new IndexViewModel();
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Index2()
+        {
+            IndexViewModel viewModel = new IndexViewModel();
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Success(IndexViewModel viewModel)
+        {
+            string firstName = viewModel.FirstName;
+            string lastName = viewModel.LastName;
+            int age = viewModel.Age;
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

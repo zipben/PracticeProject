@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Practice_Project.Interfaces;
-using Practice_Project.Models;
+using Practice_Project.Utils;
 
 namespace Practice_Project
 {

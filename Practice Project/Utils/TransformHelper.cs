@@ -3,7 +3,7 @@ using Practice_Project.Interfaces;
 using Practice_Project.Models;
 using System.Threading.Tasks;
 
-namespace Practice_Project
+namespace Practice_Project.Utils
 {
     public class TransformHelper : ITransformHelper
     {

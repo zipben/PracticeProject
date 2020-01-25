@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Practice_Project.Interfaces;
 
 namespace Practice_Project.Models
 {

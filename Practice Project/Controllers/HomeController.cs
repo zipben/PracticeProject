@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Practice_Project.Models;
+using Practice_Project.Interfaces;
 
 namespace Practice_Project.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IModelTransformation _modelTransform;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IModelTransformation modelTransform)
         {
             _logger = logger;
+            _modelTransform = modelTransform;
         }
 
         [HttpGet]
@@ -38,6 +41,8 @@ namespace Practice_Project.Controllers
             string firstName = viewModel.FirstName;
             string lastName = viewModel.LastName;
             int age = viewModel.Age;
+
+            _modelTransform.Transform(viewModel);
 
             return View(viewModel);
         }

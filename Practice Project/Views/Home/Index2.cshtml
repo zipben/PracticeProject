@@ -1,0 +1,39 @@
+@model Practice_Project.Models.IndexViewModel
+
+@{
+    ViewData["Title"] = "Form (Razorless)";
+}
+
+<form action="/Home/Success" method="post">
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-3">
+                    <label for="FirstName" style="margin: 1em">First Name</label>
+                </div>
+                <div class="col-xs-9">
+                    <input class="form-control" id="FirstName" name="FirstName" style="margin: 1em" type="text" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">
+                    <label for="LastName" style="margin: 1em">Last Name</label>
+                </div>
+                <div class="col-xs-9">
+                    <input class="form-control" id="LastName" name="LastName" style="margin: 1em" type="text" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">
+                    <label for="Age" style="margin: 1em">Age</label>
+                </div>
+                <div class="col-xs-9">
+                    <input class="form-control" data-val="true" data-val-required="The Age field is required." id="Age" name="Age" style="margin: 1em" type="number" value="0">
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="form-control">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,8 +1,40 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Practice_Project.Models.IndexViewModel
+
+@{
+    ViewData["Title"] = "Form (Razor)";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@using (Html.BeginForm("Success", "Home", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-3">
+                    @Html.LabelFor(m => m.FirstName, new { style="margin: 1em" })
+                </div>
+                <div class="col-xs-9">
+                    @Html.TextBoxFor(m => m.FirstName, new {@class = "form-control", style="margin: 1em"})
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">
+                    @Html.LabelFor(m => m.LastName, new { style="margin: 1em" })
+                </div>
+                <div class="col-xs-9">
+                    @Html.TextBoxFor(m => m.LastName, new {@class = "form-control", style="margin: 1em"})
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">
+                    @Html.LabelFor(m => m.Age, new { style="margin: 1em" })
+                </div>
+                <div class="col-xs-9">
+                    @Html.TextBoxFor(m => m.Age, new {@class = "form-control", type="number", style="margin: 1em"})
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="form-control">Submit</button>
+            </div>
+        </div>
+    </div>
+}
